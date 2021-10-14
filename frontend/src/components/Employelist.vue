@@ -84,10 +84,11 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          Software Project Management - Project 2021
+          Software Project Management - Project 2022
         </p>
       </div>
     </footer>
+
 
   </div>
 
@@ -121,13 +122,13 @@ export default {
 
     async getEmployes() {
     
-        const response = await axios.get("http://localhost:8080/");
+        const response = await axios.get("https://employemanagementsystem09.herokuapp.com/");
         this.emp = response.data;
      
     },
     async removeEmploye(id) {
       try {
-        await axios.delete(`http://localhost:8080/employes/${id}`);
+        await axios.delete(`https://employemanagementsystem09.herokuapp.com/employes/${id}`);
         this.getEmployes();
         this.$router.push("/");
       } catch (err) {
@@ -136,7 +137,7 @@ export default {
       this.$router.go()
     },
     async CreateEmploye() {
-        await axios.post("http://localhost:8080/employes", {
+        await axios.post("https://employemanagementsystem09.herokuapp.com/employes", {
           employe_id: this.id,
           employe_name: this.name,
           employe_email: this.email,
@@ -145,6 +146,7 @@ export default {
         this.name = "";
         this.email = "";
       this.$router.go()
+     
      
     },
   

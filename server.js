@@ -3,7 +3,8 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import Router from "./app/routes/employe.routes.js";
-  
+ 
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -13,4 +14,4 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(Router);
   
-app.listen(8080, () => console.log('Server running at http://localhost:8080'))
+app.listen(PORT, () => console.log('http://localhost:8080'))
